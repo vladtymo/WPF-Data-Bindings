@@ -1,0 +1,44 @@
+﻿<Window Name="mainWindow" x:Class="_00_example.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_00_example"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="344.396" Width="433.634">
+    <!--Background="{Binding ElementName=colorTxtBox, Path=Text, UpdateSourceTrigger=LostFocus}">-->
+
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Margin="0,10">
+            <Label>Background:</Label>
+            <TextBox Text="{Binding ElementName=mainWindow, Path=Background, Mode=OneWayToSource}" Name="colorTxtBox" MinWidth="300" VerticalContentAlignment="Center"></TextBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Label>Percent:</Label>
+            <TextBox Name="percentTxtBox" MinWidth="300"></TextBox>
+        </StackPanel>
+        <ProgressBar Value="{Binding ElementName=percentTxtBox, Path=Text}" Height="20" Margin="0,10"></ProgressBar>
+
+        <StackPanel Orientation="Horizontal">
+            <Label>Number:</Label>
+            <!--Default Binding Mode:
+                User-editable controls: TwoWay
+                Other: OneWay 
+            Default Update Sourse Trigger:
+                Text Property: LostFocus
+                Other: PropertyChanged-->
+            <TextBox Text="{Binding ElementName=slider, Path=Value, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" Name="numTxtBox" MinWidth="300"></TextBox>
+        </StackPanel>
+        <Slider Value="7" TickFrequency="1" TickPlacement="Both" IsSnapToTickEnabled="True" Name="slider" Margin="0,10"></Slider>
+
+        <CheckBox IsChecked="{Binding ElementName=expander, Path=IsExpanded}">Expanded</CheckBox>
+        <Expander Name="expander">
+            <StackPanel>
+                <RadioButton>Bike</RadioButton>
+                <RadioButton>Car</RadioButton>
+                <RadioButton>Truck</RadioButton>
+            </StackPanel>
+        </Expander>
+    </StackPanel>
+</Window>
