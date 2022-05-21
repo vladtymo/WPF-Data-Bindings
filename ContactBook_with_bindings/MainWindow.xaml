@@ -18,7 +18,7 @@
                  SelectedItem="{Binding Path=SelectedContact, Mode=OneWayToSource}"
                  Grid.Column="0" Background="#FF92CEE9"
                  HorizontalContentAlignment="Stretch">
-            <ListBox.ItemTemplate>
+            <!--<ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -43,7 +43,7 @@
                         </DockPanel>
                     </Grid>
                 </DataTemplate>
-            </ListBox.ItemTemplate>
+            </ListBox.ItemTemplate>-->
         </ListBox>
         <GridSplitter HorizontalAlignment="Center"
                       VerticalAlignment="Stretch"

@@ -31,9 +31,9 @@ namespace ContactBook_with_bindings
 
             
             // Встановлення властивості для відображення в ListBox
-            //contactListBox.DisplayMemberPath = nameof(Contact.FullName);// при використанні ItemTemplate,
-                                                                          // властивсть DisplayMemberPath 
-                                                                          // не працює
+            contactListBox.DisplayMemberPath = nameof(Contact.FullName); // при використанні ItemTemplate,
+                                                                         // властивсть DisplayMemberPath 
+                                                                         // не працює
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
